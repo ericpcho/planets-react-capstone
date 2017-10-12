@@ -24,7 +24,7 @@ passport.use(jwtStrategy);
 app.use(morgan('common', { skip: () => process.env.NODE_ENV === 'test' }));
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../app/build')));
 
 app.use('/api/users/', usersRouter);
 app.use('/api/auth/', authRouter);
